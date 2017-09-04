@@ -42,7 +42,7 @@
   :doo {:build "automated-tests"
         :paths {:karma "node_modules/karma/bin/karma"}}
 
-  :figwheel {:server-port     8080
+  :figwheel {:server-port     8090
              :validate-config false}
 
   :cljsbuild {:builds

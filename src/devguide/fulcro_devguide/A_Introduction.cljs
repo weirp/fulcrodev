@@ -69,7 +69,7 @@
 
   ")
 
-(defcard sample-card (dom/div nil "The following number is calculated: " (+ 3 6)))
+(defcard sample-card (dom/div nil "The following number is calculated: " (+ 3 8)))
 
 (defcard-doc
   "

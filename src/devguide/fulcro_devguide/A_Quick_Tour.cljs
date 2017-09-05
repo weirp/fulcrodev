@@ -434,7 +434,7 @@
   The `:started-callback` is triggered as the application loads. This is where you can use Fulcro's networking layer
   to pre-fetch data from the server. In our case, we want to get all of the counters. Note that we can (and should) use UI
   queries. This triggers auto-normalization of the response. The `:target` option indicates that the loaded data should
-  be places in the database at the given path (usually 1 to 3 keywords in the vector, since the db is normalized). In
+  be placed in the database at the given path (usually 1 to 3 keywords in the vector, since the db is normalized). In
   this case the ident of the target panel gives the location of the component that wants the counters, and the `:counters`
   property of that component is where it wants to know about them. Therefore the desired target path is the ident + the property
   as a vector.

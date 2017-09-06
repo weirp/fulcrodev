@@ -6,12 +6,9 @@
             [cljs.reader :as r]))
 
 (def cars-table
-  {:cars/by-id
-   {1 {:id 1 :make "Nissan" :model "Leaf"}
-    2 {:id 2 :make "Dodge" :model "Dart" }
-    3 {:id 3 :make "Ford" :model "Mustang" }}
-   }
-  )
+  { :cars/by-id { 1 {:id 1 :make "Nissan" :model "Leaf"}
+                 2 {:id 2 :make "Dodge" :model "Dart" }
+                 3 {:id 3 :make "Ford" :model "Mustang" }}})
 
 (def favorites
                                         ; TODO (exercise 2): merge your `cars-table` from above here

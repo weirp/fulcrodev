@@ -12,9 +12,9 @@
 
 (def favorites
                                         ; TODO (exercise 2): merge your `cars-table` from above here
-  {
+  (merge cars-table {:favorite-car [:cars/by-id 1]})
                                         ; TODO (exercise 2): Add a :favorite-car key that points to the Nissan Leaf via an ident
-   })
+   )
 
 (def ex3-uidb
   {

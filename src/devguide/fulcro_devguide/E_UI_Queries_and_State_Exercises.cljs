@@ -13,7 +13,13 @@
 
 (defui Person
   ;; TODO: Add a query for :db/id, :person/name, and a recursive access of :person/mate
+  static om/IQuery
+  (query [this]
+         '[:db/id :person/name {:person/mate (om/get-query Person)}])
   ;; TODO: Add an ident that uses :db/id
+  static om/Ident
+  (ident [this {:keys [db/id]}]
+         [:db/id id])
   Object
   (initLocalState [this] {:checked false})
   (render [this]
@@ -50,6 +56,9 @@
 
 (defui Root
   ;; TODO: Add root query. Remember to include top-level properties and compose in PeopleWidget
+  static om/IQuery
+  (query [this]
+         [:widget {:people (om/get-query Person)} :last-error :new-person])
   Object
   (render [this]
     (let [{:keys [widget new-person last-error]} (om/props this)]

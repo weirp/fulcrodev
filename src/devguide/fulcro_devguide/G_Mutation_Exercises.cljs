@@ -13,6 +13,8 @@
 
 ; TODO: Exercise 1: Implement this mutation
 (defmethod m/mutate 'exercise/g-ex1-inc [{:keys [state]} k p]
+  {:action  (fn [] (swap! state update :n inc))}
+
   )
 
 (defui ^:once Ex1-Root

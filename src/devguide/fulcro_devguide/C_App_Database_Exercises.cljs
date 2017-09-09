@@ -17,17 +17,15 @@
    )
 
 (def ex3-uidb
-  {
-                                        ; TODO (exercise 3): Add tables. See exercise text.
+  { ; TODO (exercise 3): Add tables. See exercise text.
    :tools/by-id {1 {:id 1 :label "Cut"}
                  2 {:id 2 :label "Copy"}}
-   :data/by-id {5 {:id 5 :x 1 :y 3}}
-   :main-panel {:toolbar {}
-                :canvas {}}
-   :toolbar/by-panel {:main {[:tools/by-id 1] [:tool/by-id 2]}}
-   :canvas/by-panel {:main {}}
+   :data/by-id {1 {:id 5 :x 1 :y 3}}
+   :toolbar {:main {:tools [[:tools/by-id 1] [:tools/by-id 2]]}}
+   :canvas {:main {:data [[:data/by-id 1]]}}
+   :main-panel {:toolbar [:toolbar :main]
+                :canvas [:canvas :main]}})
 
-   })
 
 (defcard-doc
   "

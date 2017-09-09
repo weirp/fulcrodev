@@ -77,6 +77,8 @@
 
 ; TODO: Exercise 2: Implement this mutation
 (defmethod m/mutate 'exercise/g-ex2-inc [{:keys [state]} k {:keys [id]}]
+  {:action (fn []
+             (swap! state update-in [:child/by-id id :n] inc))}
   )
 
 (defcard-fulcro mutation-exercise-2

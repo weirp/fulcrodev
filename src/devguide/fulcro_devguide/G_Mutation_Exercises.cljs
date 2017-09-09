@@ -109,8 +109,8 @@
       (dom/li nil
         (dom/span nil "n: " n)
         ; TODO: Fix the rendering using transaction follow-on property reads
-        (dom/button #js {:onClick #(om/transact! this `[(exercise/g-ex2-inc {:id ~id})])} "Increment")
-        (dom/button #js {:onClick #(om/transact! this `[(exercise/g-ex3-dec {:id ~id})])} "Decrement")))))
+        (dom/button #js {:onClick #(om/transact! this `[(exercise/g-ex2-inc {:id ~id}) :items])} "Increment")
+        (dom/button #js {:onClick #(om/transact! this `[(exercise/g-ex3-dec {:id ~id}) :items])} "Decrement")))))
 
 (def ui-ex3-item (om/factory Ex3-Item {:keyfn :id}))
 
@@ -171,7 +171,7 @@
   {:items       [[:child/by-id 1] [:child/by-id 2]]
    :lists       [[:list/by-id 1] [:list/by-id 2]]
    :list/by-id  {1 {:id 1 :title "Small" :max 10}
-                 2 {:id 2 :title "Big" :min 11}}
+                 2 {:id 2 :title "Big" :min 7}}
    :child/by-id {1 {:id 1 :n 3}
                  2 {:id 2 :n 9}}}
   {:inspect-data true})

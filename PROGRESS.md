@@ -11,3 +11,5 @@ database exercises
 
 UI, queries, and state
 queries and state exercises
+
+up to exercise on putting it together

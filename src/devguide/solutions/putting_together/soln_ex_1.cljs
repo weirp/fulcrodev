@@ -13,11 +13,11 @@
   (ident [this props] [:items/by-id (:item/id props)])
   Object
   (render [this]
-    (let [{:keys [item/id item/label item/done]} (om/props this)]
-      (dom/li nil
-        (dom/input #js {:type "checkbox" :checked (boolean done)})
-        label
-        (dom/button #js {} "X")))))
+          (let [{:keys [item/id item/label item/done]} (om/props this)]
+            (dom/li nil
+                    (dom/input #js {:type "checkbox" :checked (boolean done)})
+                    label
+                    (dom/button #js {} "X")))))
 
 (def ui-item (om/factory TodoItem))
 

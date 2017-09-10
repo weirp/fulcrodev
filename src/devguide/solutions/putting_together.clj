@@ -4,6 +4,13 @@
             [taoensso.timbre :as timbre]))
 
 
+(def pjw-system (atom nil))
+(defn make-pjw-server []
+  (fulcro.easy-server/make-fulcro-server :config-path "config/exercise.edn"))
+
+(defquery-root :something
+  (value [env params] 66))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; SOLUTIONS ARE BELOW.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

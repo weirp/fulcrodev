@@ -73,6 +73,33 @@
 
 
 ;; SOLUTIONS: Putting it Together Setting Up: The start/restart functions for the server
+(defn ex-start
+  "start the server"
+  []
+  (reset! pt/pjw-system (pt/make-pjw-server))
+  (swap! pt/pjw-system component/start))
+
+(defn ex-stop
+  "Stop the server"
+  []
+  (when @pt/pjw-system
+    (component/stop @pt/pjw-system)
+    (reset! pt/pjw-system nil)))
+
+(defn ex-restart
+  "Stop, refresh, start"
+  []
+  (ex-stop)
+  (refresh :after 'user/ex-start))
+
+(comment
+  (ex-start)
+  (ex-stop)
+  (ex-restart)
+
+  (tools-ns/refresh)
+  )
+
 (comment
   (defn ex-start
     "Start the server for the devguide server exercises."
